@@ -22,7 +22,7 @@ var Account = require('../Account/index');
 var OnFire = React.createClass({
   getInitialState: function() {
     return {
-      selectedTab: 'matches'
+      selectedTab: 'news'
     };
   },
 

@@ -3,7 +3,7 @@ var Dimensions = require('Dimensions');
 var CONSTANTS = {
   BLUE: '#0060a0',
 
-  BLACK: '#333',
+  BLACK: '#242424',
 
   GRAY: '#929292',
 

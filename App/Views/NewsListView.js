@@ -12,7 +12,7 @@ var {
 } = React;
 
 
-
+var data = require('../mock/newsList');
 
 var NewsListView = React.createClass({
 
@@ -24,19 +24,16 @@ var NewsListView = React.createClass({
     };
   },
 
-  getDefaultProps: function() {
-
-  },
-
   componentDidMount: function() {
     this.setState({
-      dataSource: this.state.dataSource.cloneWithRows([1,2,3,4,5,6,7,8,9,10])
+      dataSource: this.state.dataSource.cloneWithRows(data)
     });
   },
 
   _renderRow: function(data, section, row) {
     return (
-      <View><Text>{'ss'}</Text></View>
+      <this.props.rowCell
+        data={data}/>
     );
   },
 

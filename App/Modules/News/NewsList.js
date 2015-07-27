@@ -21,7 +21,7 @@ var NewsList = React.createClass({
     return (
       <NewsListView 
         onRowTouch={'1'}
-        rowCell={'2'}/>
+        rowCell={NewsCell}/>
     );
   }
 });
