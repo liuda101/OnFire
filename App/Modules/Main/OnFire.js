@@ -17,6 +17,7 @@ var CONSTANT = require('../Styles/CONSTANT');
 var Matches = require('../Matches/index');
 var News = require('../News/index');
 var Equipments = require('../Equipments/index');
+var Account = require('../Account/index');
 
 var OnFire = React.createClass({
   getInitialState: function() {
@@ -61,6 +62,17 @@ var OnFire = React.createClass({
           icon={require('image!equipmentsTabIcon')}>
 
           <Equipments ref='equipments' />
+
+
+        </TabBarIOS.Item>
+
+        <TabBarIOS.Item
+          selected={this.state.selectedTab === 'account'}
+          onPress={() => this.setState({selectedTab: 'account'})}
+          title='我'
+          icon={require('image!equipmentsTabIcon')}>
+
+          <Account ref='account' />
 
 
         </TabBarIOS.Item>

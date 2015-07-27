@@ -4,18 +4,30 @@ var React = require('react-native');
 
 
 var {
-
-  View,
-  Text
+  
+  NavigatorIOS
 
 } = React;
+
+var CONSTANT = require('../Styles/CONSTANT');
+var Styles = require('../Styles/index');
+
+var BasketballStarMatch = require('./basketballStarMatch');
 
 var Matches = React.createClass({
   render: function() {
     return (
-      <View>
-        <Text>{'Matches'}</Text>
-      </View>
+      <NavigatorIOS
+        barTintColor={CONSTANT.NAV_BG}
+        titleTextColor={CONSTANT.NAV_TITLE}
+        tintColor={CONSTANT.NAV_TITLE}
+        shadowHidden={true}
+        style={Styles.fullContainer}
+        itemWrapperStyle={Styles.grayBg}
+        initialRoute={{
+          title: BasketballStarMatch.TITLE,
+          component: BasketballStarMatch
+        }}/>
     );
   }
 });
