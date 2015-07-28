@@ -10,8 +10,6 @@ var CONSTANTS = {
   RED: '#ec1647',
   DARK_RED: '#bc1237',
 
-  BODY_BG: '#f8f8f8',
-
   BORDER: '#d7d7d7',
 
   TAP: '#e3e3e3',

@@ -19,7 +19,6 @@ var CONSTANT = require('../Modules/Styles/CONSTANT');
 var NewsCell = React.createClass({
 
   render: function() {
-    console.log(this.props.data.image)
     return (
       <TouchableHighlight underlayColor={CONSTANT.TAP}>
         <View style={styles.cellContainer}>
