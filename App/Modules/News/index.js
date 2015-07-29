@@ -26,7 +26,8 @@ var News = React.createClass({
         itemWrapperStyle={Styles.grayBg}
         initialRoute={{
           title: NewsList.TITLE,
-          component: NewsList
+          component: NewsList,
+          backButtonTitle: '返回'
         }}/>
     );
   }

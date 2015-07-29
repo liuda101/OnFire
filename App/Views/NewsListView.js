@@ -13,6 +13,7 @@ var {
 
 
 var data = require('../mock/newsList');
+var NewsDetail = require('./NewsDetail');
 
 var NewsListView = React.createClass({
 
@@ -30,10 +31,20 @@ var NewsListView = React.createClass({
     });
   },
 
+  _rowPressed: function() {
+    console.log('abc');
+    this.props.navigator.push({
+      title: '详情',
+      backButtonTitle: '返回',
+      component: NewsDetail
+    });
+  },
+
   _renderRow: function(data, section, row) {
     return (
       <this.props.rowCell
-        data={data}/>
+        data={data}
+        onPress={this._rowPressed}/>
     );
   },
 
@@ -41,7 +52,8 @@ var NewsListView = React.createClass({
     return (
       <ListView style={styles.container}
         dataSource={this.state.dataSource}
-        renderRow={this._renderRow}/>
+        renderRow={this._renderRow}
+        {...this.props}/>
     );
   }
 });

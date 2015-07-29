@@ -13,17 +13,15 @@ var Styles = require('../Styles/index');
 var NewsListView = require('../../Views/NewsListView');
 var NewsCell = require('../../Views/NewsCell');
 
-var NewsList = React.createClass({
+var MatchNews = React.createClass({
   render: function() {
     return (
       <NewsListView 
         onRowTouch={'1'}
-        rowCell={NewsCell}
-        navigator={this.props.navigator}/>
+        rowCell={NewsCell}/>
     );
   }
 });
 
-NewsList.TITLE = '新闻室';
 
-module.exports = NewsList;
+module.exports = MatchNews;

@@ -20,7 +20,8 @@ var NewsCell = React.createClass({
 
   render: function() {
     return (
-      <TouchableHighlight underlayColor={CONSTANT.TAP}>
+      <TouchableHighlight underlayColor={CONSTANT.TAP}
+        {...this.props}>
         <View style={styles.cellContainer}>
           <Image style={styles.cellImage} source={{uri: this.props.data.image}} />
 

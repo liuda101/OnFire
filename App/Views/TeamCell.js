@@ -20,8 +20,7 @@ var EquipmentCell = React.createClass({
 
   render: function() {
     return (
-      <TouchableHighlight underlayColor={CONSTANT.TAP}
-        {...this.props}>
+      <TouchableHighlight underlayColor={CONSTANT.TAP}>
         <View style={styles.cellContainer}>
           <Image style={styles.cellImage} />
           

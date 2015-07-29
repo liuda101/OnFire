@@ -11,19 +11,20 @@ var CONSTANT = require('../Styles/CONSTANT');
 var Styles = require('../Styles/index');
 
 var NewsListView = require('../../Views/NewsListView');
-var NewsCell = require('../../Views/NewsCell');
+var TeamCell = require('../../Views/TeamCell');
 
-var NewsList = React.createClass({
+var TeamList = React.createClass({
+  loadTeam: function() {
+    
+  },
   render: function() {
     return (
       <NewsListView 
         onRowTouch={'1'}
-        rowCell={NewsCell}
-        navigator={this.props.navigator}/>
+        rowCell={TeamCell}
+        {...this.props}/>
     );
   }
 });
 
-NewsList.TITLE = '新闻室';
-
-module.exports = NewsList;
+module.exports = TeamList;

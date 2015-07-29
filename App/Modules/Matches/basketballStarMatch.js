@@ -17,12 +17,41 @@ var {
 var Styles = require('../Styles/index');
 var CONSTANT = require('../Styles/CONSTANT');
 
+var MatchNews = require('./MatchNews');
+var CreateCard = require('../Playcard/CreateCard');
+var MatchCity = require('./MatchCity');
+
+
 var MENU_HEIGHT = 50;
 var CITY_WIDTH = 100;
 var CITY_HEIHGT = 60;
 
 
 var BasketballStarMatch = React.createClass({
+  _goToMatchNews: function() {
+    this.props.navigator.push({
+      title: '赛事新闻',
+      component: MatchNews,
+      backButtonTitle: '返回'
+    });
+  },
+
+  _goToCreateCard: function() {
+    this.props.navigator.push({
+      title: '制作球星卡',
+      component: CreateCard,
+      backButtonTitle: '返回'
+    });
+  },
+
+  _goToMatchCity: function() {
+    this.props.navigator.push({
+      title: '北京站 - 报名',
+      component: MatchCity,
+      backButtonTitle: '返回'
+    });
+  },
+
   render: function() {
     return (
       <ScrollView style={Styles.fullContainer}>
@@ -30,7 +59,7 @@ var BasketballStarMatch = React.createClass({
         <View style={thisStyle.matchCard} />
 
         <View style={thisStyle.menuContainer}>
-          <TouchableHighlight style={thisStyle.menuButton} underlayColor={CONSTANT.DARK_RED}>
+          <TouchableHighlight style={thisStyle.menuButton} underlayColor={CONSTANT.DARK_RED} onPress={this._goToMatchNews}>
             <View style={thisStyle.menuButtonC}>
               <Image source={require('image!matchMenuIcon1')} />
               <Text style={thisStyle.menuText}>{'赛事新闻'}</Text>
@@ -39,7 +68,7 @@ var BasketballStarMatch = React.createClass({
 
           <View style={thisStyle.menuSpliter} />
 
-          <TouchableHighlight style={thisStyle.menuButton} underlayColor={CONSTANT.DARK_RED}>
+          <TouchableHighlight style={thisStyle.menuButton} underlayColor={CONSTANT.DARK_RED} onPress={this._goToCreateCard}>
             <View style={thisStyle.menuButtonC}>
               <Image source={require('image!matchMenuIcon2')} />
               <Text style={thisStyle.menuText}>{'制作球星卡'}</Text>
@@ -94,7 +123,7 @@ var BasketballStarMatch = React.createClass({
               </View>
             </TouchableWithoutFeedback>
 
-            <TouchableWithoutFeedback style={thisStyle.city}>
+            <TouchableWithoutFeedback style={thisStyle.city} onPress={this._goToMatchCity}>
               <View style={thisStyle.city}>
                 <View style={[thisStyle.cityBorder, thisStyle.cityBorder3]}>
                 </View>

@@ -26,7 +26,8 @@ var Matches = React.createClass({
         itemWrapperStyle={Styles.grayBg}
         initialRoute={{
           title: BasketballStarMatch.TITLE,
-          component: BasketballStarMatch
+          component: BasketballStarMatch,
+          backButtonTitle: '返回'
         }}/>
     );
   }
