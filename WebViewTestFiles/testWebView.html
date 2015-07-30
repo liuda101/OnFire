@@ -1,0 +1,12 @@
+<h1>Hi</h1>
+
+<script>
+var methodObject = {
+  method: 'goToComment',
+  parameter: '1290'
+};
+var methodToCall = encodeURIComponent(JSON.stringify(methodObject));
+setTimeout(function() {
+  location.href = 'onfe-js://' + methodToCall;
+}, 3000);
+</script>

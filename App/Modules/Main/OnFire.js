@@ -20,10 +20,12 @@ var Matches = require('../Matches/index');
 var News = require('../News/index');
 var Equipments = require('../Equipments/index');
 var Account = require('../Account/index');
+var UserInfo = require('../Account/userInfo');
 
 var OnFire = React.createClass({
 
   _onAccountTabPressed: function() {
+
     ONFELoginManager.show(function(type, result) {
       console.log(type);
     });
