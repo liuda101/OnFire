@@ -15,6 +15,9 @@
 		00C302EA1ABCBA2D00DB3ED1 /* libRCTVibration.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302E41ABCB9EE00DB3ED1 /* libRCTVibration.a */; };
 		00E356F31AD99517003FC87E /* OnFireTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* OnFireTests.m */; };
 		0240B5F41B67791B002183F8 /* UIImagePickerManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0240B5F31B67791B002183F8 /* UIImagePickerManager.m */; };
+		0288D3C71B6A0149009FAE36 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0288D3C51B6A0149009FAE36 /* LoginViewController.m */; };
+		0288D3C81B6A0149009FAE36 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0288D3C61B6A0149009FAE36 /* LoginViewController.xib */; };
+		0288D3CB1B6A0175009FAE36 /* ONFELoginManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0288D3CA1B6A0175009FAE36 /* ONFELoginManager.m */; };
 		133E29F31AD74F7200F7D852 /* libRCTLinking.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 78C398B91ACF4ADC00677621 /* libRCTLinking.a */; };
 		139105C61AF99C1200B5F7CC /* libRCTSettings.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 139105C11AF99BAD00B5F7CC /* libRCTSettings.a */; };
 		139FDEF61B0652A700C62182 /* libRCTWebSocket.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 139FDEF41B06529B00C62182 /* libRCTWebSocket.a */; };
@@ -118,6 +121,11 @@
 		00E356F21AD99517003FC87E /* OnFireTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OnFireTests.m; sourceTree = "<group>"; };
 		0240B5F21B67791B002183F8 /* UIImagePickerManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UIImagePickerManager.h; path = "node_modules/react-native-image-picker/UIImagePickerManager.h"; sourceTree = "<group>"; };
 		0240B5F31B67791B002183F8 /* UIImagePickerManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UIImagePickerManager.m; path = "node_modules/react-native-image-picker/UIImagePickerManager.m"; sourceTree = "<group>"; };
+		0288D3C41B6A0149009FAE36 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		0288D3C51B6A0149009FAE36 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		0288D3C61B6A0149009FAE36 /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
+		0288D3C91B6A0175009FAE36 /* ONFELoginManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ONFELoginManager.h; sourceTree = "<group>"; };
+		0288D3CA1B6A0175009FAE36 /* ONFELoginManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ONFELoginManager.m; sourceTree = "<group>"; };
 		139105B61AF99BAD00B5F7CC /* RCTSettings.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTSettings.xcodeproj; path = "node_modules/react-native/Libraries/Settings/RCTSettings.xcodeproj"; sourceTree = "<group>"; };
 		139FDEE61B06529A00C62182 /* RCTWebSocket.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTWebSocket.xcodeproj; path = "node_modules/react-native/Libraries/WebSocket/RCTWebSocket.xcodeproj"; sourceTree = "<group>"; };
 		13B07F961A680F5B00A75B9A /* OnFire.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OnFire.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -245,6 +253,11 @@
 				13B07FB61A68108700A75B9A /* Info.plist */,
 				13B07FB11A68108700A75B9A /* LaunchScreen.xib */,
 				13B07FB71A68108700A75B9A /* main.m */,
+				0288D3C41B6A0149009FAE36 /* LoginViewController.h */,
+				0288D3C51B6A0149009FAE36 /* LoginViewController.m */,
+				0288D3C61B6A0149009FAE36 /* LoginViewController.xib */,
+				0288D3C91B6A0175009FAE36 /* ONFELoginManager.h */,
+				0288D3CA1B6A0175009FAE36 /* ONFELoginManager.m */,
 			);
 			name = OnFire;
 			sourceTree = "<group>";
@@ -510,6 +523,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0288D3C81B6A0149009FAE36 /* LoginViewController.xib in Resources */,
 				008F07F31AC5B25A0029DE68 /* main.jsbundle in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */,
@@ -531,6 +545,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0288D3C71B6A0149009FAE36 /* LoginViewController.m in Sources */,
+				0288D3CB1B6A0175009FAE36 /* ONFELoginManager.m in Sources */,
 				13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */,
 				13B07FC11A68108700A75B9A /* main.m in Sources */,
 				0240B5F41B67791B002183F8 /* UIImagePickerManager.m in Sources */,

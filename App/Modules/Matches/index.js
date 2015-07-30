@@ -24,6 +24,7 @@ var Matches = React.createClass({
         shadowHidden={true}
         style={Styles.fullContainer}
         itemWrapperStyle={Styles.grayBg}
+        translucent={true}
         initialRoute={{
           title: BasketballStarMatch.TITLE,
           component: BasketballStarMatch,

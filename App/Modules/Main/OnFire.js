@@ -14,12 +14,21 @@ var {
 
 var CONSTANT = require('../Styles/CONSTANT');
 
+var ONFELoginManager = require('NativeModules').ONFELoginManager;
+
 var Matches = require('../Matches/index');
 var News = require('../News/index');
 var Equipments = require('../Equipments/index');
 var Account = require('../Account/index');
 
 var OnFire = React.createClass({
+
+  _onAccountTabPressed: function() {
+    ONFELoginManager.show(function(type, result) {
+      console.log(type);
+    });
+  },
+
   getInitialState: function() {
     return {
       selectedTab: 'matches'
@@ -68,7 +77,7 @@ var OnFire = React.createClass({
 
         <TabBarIOS.Item
           selected={this.state.selectedTab === 'account'}
-          onPress={() => this.setState({selectedTab: 'account'})}
+          onPress={this._onAccountTabPressed}
           title='我'
           icon={require('image!equipmentsTabIcon')}>
 

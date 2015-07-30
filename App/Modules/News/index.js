@@ -24,6 +24,7 @@ var News = React.createClass({
         shadowHidden={true}
         style={Styles.fullContainer}
         itemWrapperStyle={Styles.grayBg}
+        translucent={true}
         initialRoute={{
           title: NewsList.TITLE,
           component: NewsList,

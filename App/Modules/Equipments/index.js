@@ -26,6 +26,7 @@ var Equipments = React.createClass({
         shadowHidden={true}
         style={Styles.fullContainer}
         itemWrapperStyle={Styles.grayBg}
+        translucent={true}
         initialRoute={{
           title: EquipmentList.TITLE,
           component: EquipmentList

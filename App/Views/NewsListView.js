@@ -32,7 +32,6 @@ var NewsListView = React.createClass({
   },
 
   _rowPressed: function() {
-    console.log('abc');
     this.props.navigator.push({
       title: '详情',
       backButtonTitle: '返回',
