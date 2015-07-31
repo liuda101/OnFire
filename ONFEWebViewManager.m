@@ -19,6 +19,7 @@ RCT_EXPORT_MODULE()
 RCT_REMAP_VIEW_PROPERTY(url, URL, NSURL);
 RCT_EXPORT_VIEW_PROPERTY(contentInset, UIEdgeInsets);
 RCT_EXPORT_VIEW_PROPERTY(automaticallyAdjustContentInsets, BOOL);
+RCT_EXPORT_VIEW_PROPERTY(backgroundColor, UIColor);
 
 - (UIView *)view
 {

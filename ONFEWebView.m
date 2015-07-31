@@ -23,17 +23,26 @@
 {
   RCTEventDispatcher *_eventDispatcher;
   UIWebView *_webView;
+  UIActivityIndicatorView *_spinner;
 }
 
 - (instancetype)initWithEventDispatcher:(RCTEventDispatcher *)eventDispatcher
 {
   if ((self = [super initWithFrame:CGRectZero])) {
+    super.backgroundColor = [UIColor clearColor];
+    
     _eventDispatcher = eventDispatcher;
     _contentInset = UIEdgeInsetsZero;
     _automaticallyAdjustContentInsets = YES;
+    
     _webView = [[UIWebView alloc] initWithFrame:self.bounds];
     _webView.delegate = self;
+    _webView.backgroundColor = [UIColor whiteColor];
+    
+    _spinner = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhite];
+    
     [self addSubview:_webView];
+    [self addSubview:_spinner];
   }
   
   return self;
@@ -50,6 +59,15 @@ RCT_NOT_IMPLEMENTED(-initWithCoder:(NSCoder *)aDecoder)
 
 - (void)setURL:(NSURL *)URL
 {
+  NSHTTPCookie *cookie = [NSHTTPCookie cookieWithProperties:
+                          [NSDictionary dictionaryWithObjectsAndKeys:
+                           [URL host], NSHTTPCookieDomain,
+                           [URL path], NSHTTPCookiePath,
+                           @"isNative", NSHTTPCookieName,
+                           @"yes", NSHTTPCookieValue,
+                           nil]];
+  [[NSHTTPCookieStorage sharedHTTPCookieStorage] setCookie:cookie];
+  
   [_webView loadRequest:[NSURLRequest requestWithURL:URL]];
 }
 
@@ -69,6 +87,16 @@ RCT_NOT_IMPLEMENTED(-initWithCoder:(NSCoder *)aDecoder)
                       updateOffset:NO];
 }
 
+- (void)setBackgroundColor:(UIColor *)backgroundColor
+{
+  _webView.backgroundColor = backgroundColor;
+}
+
+- (UIColor *)backgroundColor
+{
+  return _webView.backgroundColor;
+}
+
 #pragma mark - UIWebViewDelegate methods
 
 - (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType
@@ -82,5 +110,7 @@ RCT_NOT_IMPLEMENTED(-initWithCoder:(NSCoder *)aDecoder)
   }
   return ![request.URL.scheme isEqualToString:@"onfe-js"];
 }
+
+
 
 @end
